@@ -47,4 +47,17 @@ Then, fork it to your account.
 Third: Set up your git client tunnel
 ------------------------------------
 
-![]()
+![Client tunnel](wizard1.png)
+
+![Git over I2P](wizard2.png)
+
+![gittest.i2p](wizard3.png)
+
+![localhost:localport](wizard4.png)
+
+![Auto Start](wizard5.png)
+
+![Review settings](wizard6.png)
+
+Fourth: Attempt a clone
+-----------------------
