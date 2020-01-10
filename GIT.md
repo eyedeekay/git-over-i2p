@@ -119,6 +119,7 @@ adding some backup tunnels.
 If that doesn't work, then the next easy thing to try is to decrease the tunnel
 length. Don't do this if you believe you are at risk of your code-contribution
 activity being de-anonymized by a well-resourced attacker seeking to run
-many malicious nodes and control your whole path.
+many malicious nodes and control your whole path. If that sounds unlikely to you
+then you can probably do it safely.
 
 ![One-Hop Tunnels](tweak1.png)
