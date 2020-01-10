@@ -44,6 +44,8 @@ Then, fork it to your account.
 
 ![Roger is forking](fork.png)
 
+![Roger is finished](forked.png)
+
 Third: Set up your git client tunnel
 ------------------------------------
 
