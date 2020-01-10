@@ -34,11 +34,13 @@ Second: Create a project to test with
 
 To make sure the setup process works, it helps to make a repository to test with
 from the server, and for the sake of this tutorial, we're going to use a fork of
-the I2P router.
+the I2P router. First, browse to the i2p-hackers/i2p.i2p repository:
 
 ![Browse to i2p.i2p](explore.png)
 
 ![I2P Hackers i2p.i2p](i2p.png)
+
+Then, fork it to your account.
 
 ![Roger is forking](fork.png)
 
