@@ -111,11 +111,14 @@ running the following commands:
 Which tells git to alter the repository configuration so that fetching from
 origin fetches all branches.
 
+If that doesn't work, you can try opening the tunnel configuration menu and
+adding some backup tunnels.
+
+![Backup Tunnels](tweak2.png)
+
 If that doesn't work, then the next easy thing to try is to decrease the tunnel
 length. Don't do this if you believe you are at risk of your code-contribution
 activity being de-anonymized by a well-resourced attacker seeking to run
-malicious nodes and control your whole path. If that is you, thanks for
-contributing code under such staggeringly dangerous conditions, I really found
-what you did in 2013 to be an inspiration and hope you are exonerated by a fair
-trial conducted in absentia.
+many malicious nodes and control your whole path.
 
+![One-Hop Tunnels](tweak1.png)
