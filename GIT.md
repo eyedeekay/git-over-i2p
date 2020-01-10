@@ -49,17 +49,38 @@ Then, fork it to your account.
 Third: Set up your git client tunnel
 ------------------------------------
 
+To have read-write access to my server, you'll need to set up a tunnel for your
+SSH client. As an example, we're going to use the HTTP tunnel instead, but if
+all you need is read-only, HTTP/S cloning, then you can skip all this and just
+use the http_proxy environment variable to configure git to use the
+pre-configured I2P HTTP Proxy. For example:
+
+        http_proxy=http://localhost:4444 git clone http://gittest.i2p/welshlyluvah1967/i2p.i2p
+
 ![Client tunnel](wizard1.png)
 
 ![Git over I2P](wizard2.png)
 
+Then, add the address you will be pushing and pulling from. Note that this
+example address is for Read-Only HTTP-over-I2P clones, if your admin does not
+allow the git HTTP(Smart HTTP) protocol, then you will need to get the SSH clone
+base32 from them. If you have an SSH clone base32, substitute it for gittest.i2p
+in this step.
+
 ![gittest.i2p](wizard3.png)
+
+Pick a port to forward the I2P service to locally.
 
 ![localhost:localport](wizard4.png)
 
+I use it alot, so I start my client tunnel automatically, but it's up to you.
+
 ![Auto Start](wizard5.png)
+
+When you're all done, it should look alot like this.
 
 ![Review settings](wizard6.png)
 
 Fourth: Attempt a clone
 -----------------------
+
