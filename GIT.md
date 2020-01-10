@@ -64,8 +64,8 @@ pre-configured I2P HTTP Proxy. For example:
 Then, add the address you will be pushing and pulling from. Note that this
 example address is for Read-Only HTTP-over-I2P clones, if your admin does not
 allow the git HTTP(Smart HTTP) protocol, then you will need to get the SSH clone
-base32 from them. If you have an SSH clone base32, substitute it for gittest.i2p
-in this step.
+base32 from them. If you have an SSH clone base32, substitute it for the base32
+in this step, which will fail.
 
 ![gittest.i2p](wizard3.png)
 
@@ -83,4 +83,39 @@ When you're all done, it should look alot like this.
 
 Fourth: Attempt a clone
 -----------------------
+
+Now your tunnel is all set up, you can attempt a clone over SSH.
+
+        GIT_SSH_COMMAND="ssh -p 7442" \
+            git clone git@127.0.0.1:welshlyluvah1967/i2p.i2p
+
+You might get an error where the remote end hangs up unexpectedly.
+Unfortunately git still doesn't support resumable cloning. Until it does, there
+are a couple fairly easy ways to handle this. The first and easiest is to try
+and clone to a shallow depth:
+
+        GIT_SSH_COMMAND="ssh -p 7442" \
+            git clone --depth 1 git@127.0.0.1:welshlyluvah1967/i2p.i2p
+
+Once you've performed a shallow clone, you can fetch the rest resumably by
+changing to the repo directory and running:
+
+        git fetch --unshallow
+
+At this point, you still don't have all your branches yet. You can get them by
+running the following commands:
+
+        git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+        git fetch origin
+
+Which tells git to alter the repository configuration so that fetching from
+origin fetches all branches.
+
+If that doesn't work, then the next easy thing to try is to decrease the tunnel
+length. Don't do this if you believe you are at risk of your code-contribution
+activity being de-anonymized by a well-resourced attacker seeking to run
+malicious nodes and control your whole path. If that is you, thanks for
+contributing code under such staggeringly dangerous conditions, I really found
+what you did in 2013 to be an inspiration and hope you are exonerated by a fair
+trial conducted in absentia.
 
