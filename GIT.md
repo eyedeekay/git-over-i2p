@@ -136,7 +136,7 @@ order to do set up your workspace for this, take the following steps:
 
 - ***Never make changes to the Master Branch***. You will be using the master
 branch to periodially obtain updates to the official source code. All changes
-should be made in master branches.
+should be made in feature branches.
 
 1. Set up a second remote in your local repository using the upstream source
  code.
