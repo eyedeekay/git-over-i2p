@@ -123,3 +123,48 @@ many malicious nodes and control your whole path. If that sounds unlikely to you
 then you can probably do it safely.
 
 ![One-Hop Tunnels](tweak1.png)
+
+*Suggested Workflow for Developers!*
+------------------------------------
+
+Revision control can make your life easier, but it works best if you use it
+well! In light of this, we strongly suggest a fork-first, feature-branch
+workflow as many are familiar with from Github. In such a workflow, the master
+branch is used as a sort of "Trunk" for updates and is never touched by the
+programmmer, instead, all changes to the master are merged from branches. In
+order to do set up your workspace for this, take the following steps:
+
+- ***Never make changes to the Master Branch***. You will be using the master
+branch to periodially obtain updates to the official source code. All changes
+should be made in master branches.
+
+1. Set up a second remote in your local repository using the upstream source
+ code.
+
+        git remote add upstream git@127.0.0.1:i2p-hackers/i2p.i2p
+
+2. Pull in any upstream changes on your current master:
+
+        git pull upstream master
+
+3. Before making any changes to the source code, check out a new feature branch
+ to develop on:
+
+        git checkout -b feature-branch-name
+
+4. When you're done with your changes, commit them and push them to your branch
+
+        git commit -am "I added an awesome feature!"
+        git push origin feature-branch-name
+
+5. Submit a merge request. When the merge request is approved and brought into
+ the upstream master, check out the master locally and pull in the changes:
+
+        git checkout master
+        git pull upstream master
+
+6. Whenever a change to the upstream master(i2p-hackers/i2p.i2p) is made, you
+ can update your master code using this procedure as well.
+
+        git checkout master
+        git pull upstream master
