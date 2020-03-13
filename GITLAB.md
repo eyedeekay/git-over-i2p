@@ -92,7 +92,8 @@ policies. After all, there is far more abusive content on the non-anonymous
 internet than there is on I2P, we wouldn't want to make it too easy to introduce
 abusive content from such a nefarious place.
 
-Add the following lines to your gitlab.rb file.
+Add the following lines to your gitlab.rb file inside the /src/gitlab/config
+container. These settings will take effect when you restart in a moment.
 
         gitlab_rails['env'] = {
             "http_proxy" => "http://172.17.0.1:4446",
@@ -121,36 +122,45 @@ TCP port 8080, and one to the Gitlab SSH interface on TCP Port 8022.
 For the Web interface, use an "HTTP" server tunnel. From [http://127.0.0.1:7657/i2ptunnelmgr](http://127.0.0.1:7657/i2ptunnelmgr)
 launch the "New Tunnel Wizard" and enter the following values at each step:
 
- 1.
- 2.
- 3.
- 4.
- 5.
- 6.
- 7.
+ 1. Select "Server Tunnel"
+ 2. Select "HTTP Server"
+ 3. Fill in "Gitlab Web Service" or otherwise describe the tunnel
+ 4. Fill in ```127.0.0.1``` for the host and ```8080``` for the port.
+ 5. Select "Automatically start tunnel when Router Starts"
+ 6. Confirm your selections.
 
 #### Register a Hostname(Optional)
 
 Web services on I2P can register hostnames for themselves by providing an
-authentication string to a jump service provider like stats.i2p.
+authentication string to a jump service provider like [stats.i2p](http://stats.i2p).
+To do this, open the [http://127.0.0.1:7657/i2ptunnelmgr](http://127.0.0.1:7657/i2ptunnelmgr)
+again and click on the "Gitlab Web Service" item you just set up. Scroll to the
+bottom of the "Edit Server Settings" section and click Registration
+Authentication. Copy the field that says "Authentication for adding Hostname"
+and visit [stats.i2p](http://stats.i2p/i2p/addkey.html) to add your hostname.
+Note that if you want to use a subdomain(Like git.idk.i2p) then you will have
+to use the correct authentication string for your subdomain, which is a little
+bit more complicated and merits it's own instructions.
 
 ### Gitlab SSH Interface
 
 For the SSH interface, use a "Standard" server tunnel. From [http://127.0.0.1:7657/i2ptunnelmgr](http://127.0.0.1:7657/i2ptunnelmgr)
 launch the "New Tunnel Wizard" and enter the following values at each step:
 
- 1.
- 2.
- 3.
- 4.
- 5.
- 6.
- 7.
+ 1. Select "Server Tunnel"
+ 2. Select "Standard Server"
+ 3. Fill in "Gitlab SSH Service" or otherwise describe the tunnel
+ 4. Fill in ```127.0.0.1``` for the host and ```8022``` for the port.
+ 5. Select "Automatically start tunnel when Router Starts"
+ 6. Confirm your selections.
 
 ## Re-start the Gitlab Service with the new Hostname
 
+Finally, if you either modified ```gitlab.rb``` or you registered a hostname,
+you will need to re-start the gitlab service for the settings to take effect.
 
-
+        docker stop gitlab
+        docker rm gitlab
         docker run --detach \
           --hostname your.hostname.i2p \
           --hostname thisisreallylongbase32hostnamewithfiftytwocharacters.b32.i2p \
