@@ -153,7 +153,7 @@ launch the "New Tunnel Wizard" and enter the following values at each step:
 
         docker run --detach \
           --hostname your.hostname.i2p \
-          --hostname 7qeve4v2chmjdqlwpa3vl7aojf3nodbku7vepnjwrsxljzqipz6a.b32.i2p \
+          --hostname thisisreallylongbase32hostnamewithfiftytwocharacters.b32.i2p \
           --env HTTP_PROXY=http://172.17.0.1:4446 \
           --publish 127.0.0.1:8443:443 --publish 127.0.0.1:8080:80 --publish 127.0.0.1:8022:22 \
           --name gitlab \
