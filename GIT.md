@@ -4,12 +4,7 @@ Git over I2P for Users
 TUTORIAL for setting up git access through an I2P Tunnel. This tunnel will act
 as your access point to a single git service on I2P.
 
-This is **NOT** git-remote-i2p, I'm working on it, it'll be ready soon.
-git-remote-i2p will automatically tunnel to a git service hosted at an I2P
-domain or at a .b32.i2p address.
-
-Before anything else: Know the capabilities the service offers to the public
-----------------------------------------------------------------------------
+## Before anything else: Know the capabilities the service offers to the public
 
 Depending on how the git service is configured, it may or may not offer all
 services on the same address. In the case of gittest.i2p, there is a public
@@ -18,8 +13,7 @@ that, you must also know the SSH base32, which isn't public at this time. Unless
 I've told you the SSH base32 to gittest.i2p, head over to the [Server](GITLAB.md)
 tutorial to set up your own.
 
-First: Set up an account at a Git service
------------------------------------------
+## First: Set up an account at a Git service
 
 To create your repositories on a remote git service, sign up for a user account
 at that service. Of course it's also possible to create repositories locally
@@ -29,8 +23,7 @@ sign-up form:
 
 ![Registration is easy!](register.png)
 
-Second: Create a project to test with
--------------------------------------
+## Second: Create a project to test with
 
 To make sure the setup process works, it helps to make a repository to test with
 from the server, and for the sake of this tutorial, we're going to use a fork of
@@ -46,8 +39,7 @@ Then, fork it to your account.
 
 ![Roger is finished](forked.png)
 
-Third: Set up your git client tunnel
-------------------------------------
+## Third: Set up your git client tunnel
 
 To have read-write access to my server, you'll need to set up a tunnel for your
 SSH client. As an example, we're going to use the HTTP tunnel instead, but if
@@ -81,8 +73,8 @@ When you're all done, it should look alot like this.
 
 ![Review settings](wizard6.png)
 
-Fourth: Attempt a clone
------------------------
+## Fourth: Attempt a clone
+
 
 Now your tunnel is all set up, you can attempt a clone over SSH.
 
@@ -124,8 +116,7 @@ then you can probably do it safely.
 
 ![One-Hop Tunnels](tweak1.png)
 
-*Suggested Workflow for Developers!*
-------------------------------------
+## *Suggested Workflow for Developers!*
 
 Revision control can make your life easier, but it works best if you use it
 well! In light of this, we strongly suggest a fork-first, feature-branch
