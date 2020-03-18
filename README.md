@@ -18,3 +18,7 @@ domain or at a .b32.i2p address.
 
 ... for a tunnel-based configuration to access any Git service.
 
+[If you're trying to use a *torrent* of a *git bundle* to work around hangups and avoid permanent takedowns, go here](BUNDLES.md)
+---------------------------------------------------------------------------------------------------------------------------------
+
+... for the git bundle usage instructions
