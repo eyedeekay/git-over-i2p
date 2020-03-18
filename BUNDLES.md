@@ -15,8 +15,8 @@ If you intend to generate a git bundle, you **must** already possess a full copy
 of the **git** repository, not the mtn repository. You can get it from github
 or from git.idk.i2p, but a shallow clone(a clone done to --depth=1) *will not*
 *work*. It will fail silently, creating what looks like a bundle, but when you
-try to clone it, If you are just retrieving a pre-generated git bundle, then
-this section does not apply to you.
+try to clone it it will fail. If you are just retrieving a pre-generated git
+bundle, then this section does not apply to you.
 
 Fetching I2P Source via Bittorrent
 ----------------------------------
@@ -25,7 +25,7 @@ Someone will need to supply you with a torrent file or a magnet link
 corresponding to an existing ```git bundle``` that they have already generated
 for you. A recent, correctly-generated bundle of the mainline i2p.i2p source
 code as-of Wednesday, March 18, 2020, can be found inside of I2P at my pastebin
-[paste.idk.i2p/](http://paste.idk.i2p/).
+[paste.idk.i2p/f/4hq37i](http://paste.idk.i2p/f/4h137i).
 
 Once you have a bundle, you will need to use git to create a working repository
 from it. If you're using GNU/Linux and i2psnark, the git bundle should be
@@ -82,7 +82,7 @@ Once you have that, simply run the corresponding ant target:
 and copy the resulting bundle into your I2PSnark downloads directory. For
 instance:
 
-        cp i2p.i2p.bundle* ~/.i2p/i2psnark/
+        cp i2p.i2p.bundle* $HOME/.i2p/i2psnark/
 
 In a minute or two, I2PSnark will pick up on the torrent. Click on the "Start"
 button to begin seeding the torrent.
