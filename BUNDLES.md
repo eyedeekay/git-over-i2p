@@ -1,4 +1,4 @@
-Using a `git bundle` to fetch the I2P source code
+Using a git bundle to fetch the I2P source code
 =================================================
 
 Cloning large software repositories over I2P can be difficult, and using git can
@@ -25,13 +25,13 @@ Someone will need to supply you with a torrent file or a magnet link
 corresponding to an existing ```git bundle``` that they have already generated
 for you. A recent, correctly-generated bundle of the mainline i2p.i2p source
 code as-of Wednesday, March 18, 2020, can be found inside of I2P at my pastebin
-[paste.idk.i2p/f/4hq37i](http://paste.idk.i2p/f/4h137i).
+[paste.idk.i2p/f/4hq37i](http://paste.idk.i2p/f/4hq37i).
 
 Once you have a bundle, you will need to use git to create a working repository
 from it. If you're using GNU/Linux and i2psnark, the git bundle should be
-located in $HOME/.i2p/i2psnark or, as a service on Debian,
+located in \$HOME/.i2p/i2psnark or, as a service on Debian,
 /var/lib/i2p/i2p-config/i2psnark. If you are using BiglyBT on GNU/Linux, it is
-probably at "$HOME/BiglyBT Downloads/" instead. The examples here assume
+probably at "\$HOME/BiglyBT Downloads/" instead. The examples here assume
 I2PSnark on GNU/Linux, if you use something else, replace the path to the
 bundle with the download directory preferred by your client and platform.
 
