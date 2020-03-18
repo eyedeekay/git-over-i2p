@@ -1,0 +1,16 @@
+Using these files:
+==================
+
+These files are provided so that people who wish to can help seed the torrent.
+To use these files, download them to your i2psnark directory:
+
+First download the file itself:
+
+```wget -c -O $HOME/.i2p/i2psnark/i2p.i2p.bundle https://github.com/eyedeekay/git-over-i2p/releases/download/bundles/i2p.i2p.bundle```
+
+Then download the torrent.
+
+```wget -c -O $HOME/.i2p/i2psnark/i2p.i2p.bundle.torrent https://github.com/eyedeekay/git-over-i2p/releases/download/bundles/i2p.i2p.bundle.torrent```
+
+I2PSnark will pick up the torrent momentarily. Click the "Start" button to help
+seed the torrent.
