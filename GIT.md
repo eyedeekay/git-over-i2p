@@ -47,7 +47,7 @@ all you need is read-only, HTTP/S cloning, then you can skip all this and just
 use the http_proxy environment variable to configure git to use the
 pre-configured I2P HTTP Proxy. For example:
 
-        http_proxy=http://localhost:4444 git clone http://gittest.i2p/welshlyluvah1967/i2p.i2p
+        http_proxy=http://localhost:4444 git clone http://gittest.i2p/i2p-developer/i2p.i2p
 
 ![Client tunnel](wizard1.png)
 
@@ -79,7 +79,7 @@ When you're all done, it should look alot like this.
 Now your tunnel is all set up, you can attempt a clone over SSH.
 
         GIT_SSH_COMMAND="ssh -p 7442" \
-            git clone git@127.0.0.1:welshlyluvah1967/i2p.i2p
+            git clone git@127.0.0.1:i2p-developer/i2p.i2p
 
 You might get an error where the remote end hangs up unexpectedly.
 Unfortunately git still doesn't support resumable cloning. Until it does, there
@@ -87,7 +87,7 @@ are a couple fairly easy ways to handle this. The first and easiest is to try
 and clone to a shallow depth:
 
         GIT_SSH_COMMAND="ssh -p 7442" \
-            git clone --depth 1 git@127.0.0.1:welshlyluvah1967/i2p.i2p
+            git clone --depth 1 git@127.0.0.1:i2p-developer/i2p.i2p
 
 Once you've performed a shallow clone, you can fetch the rest resumably by
 changing to the repo directory and running:
